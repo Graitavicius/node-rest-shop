@@ -21,6 +21,8 @@ process.env.MONGO_ATLAS_PW +
 mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
+//making uploads folder publicly accessible
+app.use('/uploads', express.static('uploads'));
 // Adding body parser
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
